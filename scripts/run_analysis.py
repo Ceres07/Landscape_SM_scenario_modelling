@@ -27,4 +27,5 @@ for key in ['laz','rain_hourly']:sources.append(dict(path=cfg[key],sha256=file_h
 print(events[['group','date','rain_mm','coverage_hours']].to_string(index=False))
 print('Maximum variation of scenario offset:',metadata['max_scenario_offset_time_range_pp'])
 subprocess.run([sys.executable,str(ROOT/'scripts/write_results.py')],check=True)
-print(ROOT/'outputs/index.html')
+subprocess.run([sys.executable,str(ROOT/'scripts/run_area_storage.py')],check=True)
+print(ROOT/'outputs/whole_gully_storage.html')

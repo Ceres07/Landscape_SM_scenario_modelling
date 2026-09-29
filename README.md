@@ -2,7 +2,7 @@
 
 A separate, reproducible sensitivity experiment using frozen DownscalingMoistureModel model8, real Phenode locations and a 5 m DEM generated from the supplied classified Brindabella LiDAR.
 
-Open **[outputs/index.html](outputs/index.html)** for the standalone interactive event dashboard. It works offline. The dropdown switches between three past-year daily events and three older gauge-driven hourly experiments. Downloadable PNG/PDF figures and CSV predictions are beside it. **[outputs/all_sensors_daily.html](outputs/all_sensors_daily.html)** shows all seven sensors over the full period.
+Open **[outputs/whole_gully_storage.html](outputs/whole_gully_storage.html)** for whole-gully water-storage comparisons. The original sensor-pixel dashboard is **[outputs/index.html](outputs/index.html)**. It works offline. The dropdown switches between three past-year daily events and three older gauge-driven hourly experiments. Downloadable PNG/PDF figures and CSV predictions are beside it. **[outputs/all_sensors_daily.html](outputs/all_sensors_daily.html)** shows all seven sensors over the full period.
 
 ## What this experiment tests
 
@@ -29,6 +29,28 @@ Provisional centrelines snap within 20 m of each gully probe to a cell with high
 Cuts are exactly 1 m and 4 m at the centreline. At off-centre EOG and AEG? pixels they are 0.75/3 m, and at AOG they are 1/4 m. Original coordinates are retained. Both unconditioned scenario DEMs and the elevation raised by hydrological conditioning are saved. In the strong scenario, conditioning raises some footprint cells by up to about 1.73 m; this is visible in the QC rasters. It does not silently change the saved incision depths.
 
 Slope and TWI follow DMM's conventions. TWI uses accumulation in **cell counts**, as in training. It is resolution dependent; changing to physical contributing area without refitting would also alter predictor meaning. Six of seven baseline slopes exceed the embedded training maximum of 14.73 degrees. `covariate_training_audit.csv` contains ranges and standardised values for every scenario. These are unvalidated extrapolations at 5 m.
+
+## Whole-gully storage totals
+
+The original time-series curves sample the 5 m cell containing each sensor. The storage extension instead predicts every valid cell in each **fixed original incision footprint**, then integrates over area. It includes EOG (12,000 m²), AOG (13,125 m²), AEG? (12,400 m²), and their 37,525 m² union. All 1,501 footprint cells have valid inputs in every scenario. Individual masks are disjoint here; the union calculation also handles overlap without counting it twice.
+
+Two different quantities are plotted:
+
+1. **SM-derived volume equivalent:** `sum(SM_percent / 100 × area_m2 × assumed_soil_depth_m)`. Default soil depth is explicitly assumed to be 1 m; use `--soil-depth-m` to change it. This means a uniform 1 m layer below each scenario surface, not the entire geological soil profile. Model8's fitted moisture readout is not a mass-conserving water-volume state. These totals are exploratory equivalents, not validated actual water inventories.
+2. **Internal bucket storage volume:** `sum(storage_mm × area_m2 / 1000)`. This is the model's conceptual active reservoir; it is not total soil pore water. Terrain does not alter it, so all scenario curves overlap exactly.
+
+The totals describe water present **at each time**. They are not a cumulative sum of hourly storage values, which would repeatedly count the same water. The right-hand panels show change from pre-event storage.
+
+At the assumed 1 m depth, the combined SM-derived volume differs by approximately **−128 m³** for the moderate incision and **−539 m³** for the strong incision. These differences are constant through time; they do not represent extra water lost from the model's bucket. The calculation does not include surface runoff, ponding, groundwater, upstream catchment storage, or the soil volume physically removed by erosion. Soil depth and properties remain fixed across scenarios. Test these assumptions before treating the values as a physical erosion response.
+
+Run the extension separately after the original analysis:
+
+```bash
+/opt/miniconda3/envs/paddockts/bin/python scripts/run_area_storage.py --soil-depth-m 1
+/opt/miniconda3/envs/paddockts/bin/python scripts/verify_area_storage.py
+```
+
+It reuses the existing cached soil rasters, weather and DEMs without network access. Results are in `gully_storage_timeseries.csv`, `gully_storage_areas.csv`, `gully_storage_scenario_comparison.csv`, and `gully_storage_metadata.json`. The standalone report and PNG/PDF plots are named `whole_gully_*`.
 
 ## Daily versus hourly model
 

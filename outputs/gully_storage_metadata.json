@@ -1,0 +1,17 @@
+{
+  "soil_depth_m": 1.0,
+  "cell_area_m2": 25.0,
+  "soil_cache_sha256": "283ad0cbd4e9e9a5a48316c2fdff5aa8b11e0d07974db0f05d428cd41a81f1ac",
+  "model_sha256": "e14f257fd49366440a2ff2d131ecd16ed13189c9700036489aae92254cecfda4",
+  "mask": "Original incision footprint, constant across scenarios; union counts overlaps once",
+  "storage_definition": "SM-derived equivalent: sum(SM_percent / 100 * horizontal_cell_area * assumed_soil_depth)",
+  "bucket_definition": "sum(conceptual_bucket_storage_mm / 1000 * horizontal_cell_area)",
+  "assumptions": [
+    "Uniform layer below each scenario surface",
+    "Soil properties and depth fixed despite excavation",
+    "No surface water, lateral routing or groundwater inventory",
+    "SM readout-derived volume is not the model water-balance state"
+  ],
+  "max_offset_time_variation_m3": 6.366462912410498e-12,
+  "max_bucket_scenario_difference_m3": 0.0
+}

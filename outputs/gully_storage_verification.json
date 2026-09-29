@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "checks": [
+    "VWC units and soil-depth conversion",
+    "common mask covers 1501 cells",
+    "no duplicate region/scenario/timestamps",
+    "no double counting in combined total",
+    "area-integrated readout has constant scenario offsets",
+    "internal bucket totals identical across scenarios"
+  ]
+}
