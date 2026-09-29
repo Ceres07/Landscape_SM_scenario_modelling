@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "checks": [
+    "5 m grid and aligned scenarios",
+    "exact maximum 1 m and 4 m incision",
+    "no elevation edits outside footprint",
+    "no changes to bucket storage across scenarios",
+    "constant terrain offsets",
+    "invariant peak rises and peak timing",
+    "365 rainfall days ranked",
+    "standalone dashboard generated"
+  ],
+  "max_offset_variation_pp": 3.552713678800501e-15
+}

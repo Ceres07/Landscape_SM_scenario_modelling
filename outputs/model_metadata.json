@@ -1,0 +1,49 @@
+{
+  "artifact_sha256": "e14f257fd49366440a2ff2d131ecd16ed13189c9700036489aae92254cecfda4",
+  "parameters": {
+    "smax": 179.35310407480046,
+    "alpha": 1.1666230791639909,
+    "k": 0.006534610437461938,
+    "theta_r": 17.724919498702008,
+    "dtheta": 16.87391922510052,
+    "c_soil_clay": 1.8554808162983403,
+    "c_soil_sand": -1.7692661670047165,
+    "c_soil_awc": -0.42000831863097055,
+    "c_soil_bdw": -0.43737226816506625,
+    "c_twi": 0.6909248191678597,
+    "c_slope": -0.583410488637071,
+    "c_elevation": -0.3474371084781884,
+    "c_aridity": 0.6111284452118453,
+    "c_intercept": 0.0544500474570818
+  },
+  "static_variables": [
+    "soil_clay",
+    "soil_sand",
+    "soil_awc",
+    "soil_bdw",
+    "twi",
+    "slope",
+    "elevation",
+    "aridity"
+  ],
+  "aridity_window": [
+    "2023-01-01",
+    "2026-09-28"
+  ],
+  "aridity": 0.4254909007743327,
+  "hourly_k": 0.00027313162919018197,
+  "daily_k": 0.006534610437461938,
+  "max_scenario_offset_time_range_pp": 3.552713678800501e-15,
+  "past_year": [
+    "2025-09-29",
+    "2026-09-28"
+  ],
+  "hourly_status": "experimental timestep adaptation, not recalibrated or validated",
+  "hourly_gap_policies": [
+    "SILO daily rain / hours in day at missing gauge hours",
+    "zero at missing gauge hours"
+  ],
+  "hourly_initialization": "daily SILO bucket storage on the day preceding the event window; approximate time alignment",
+  "rain_timezone_basis": "UTC assumed from original R ymd_hms() default; CSV has no timezone metadata",
+  "elevation_crs_basis": "LAZ has no CRS; EPSG:28355 assigned from neighbouring DEM and Brindabella source processing records"
+}

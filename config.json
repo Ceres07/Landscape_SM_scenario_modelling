@@ -1,0 +1,31 @@
+{
+  "phenode_dir": "/Volumes/Dmitry_work/borevitz_projects/Data/Phenode_wireless_data",
+  "rain_hourly": "/Volumes/Dmitry_work/Honours2025/rain_hourly.csv",
+  "laz": "/Volumes/Dmitry_work/Honours2025/DEM_processing/merged.laz",
+  "dmm_repo": "/Volumes/Dmitry_work/borevitz_projects/DownscalingMoistureModel",
+  "analysis_date": "2026-09-29",
+  "rain_timezone": "UTC",
+  "display_timezone": "Australia/Sydney",
+  "dem_crs": "EPSG:28355",
+  "resolution_m": 5,
+  "incisions_m": {
+    "baseline": 0,
+    "moderate_1m": 1,
+    "strong_4m": 4
+  },
+  "gully_half_width_m": 15,
+  "gully_upstream_length_m": 150,
+  "gully_downstream_length_m": 300,
+  "snap_radius_m": 20,
+  "events_per_group": 3,
+  "event_separation_days": 10,
+  "pre_days": 3,
+  "post_days": 7,
+  "weather_bbox": [
+    148.915,
+    -35.117,
+    148.956,
+    -35.077
+  ],
+  "weather_start": "2023-01-01"
+}

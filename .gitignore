@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.DS_Store
+._*
+data/cache/
+data/raw/
+outputs/terrain/
+outputs/*.csv
+outputs/*.npz
+outputs/*.html
+outputs/*.png
+outputs/*.pdf

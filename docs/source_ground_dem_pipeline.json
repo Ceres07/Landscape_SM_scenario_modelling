@@ -1,0 +1,17 @@
+[
+  {
+    "type": "readers.las",
+    "filename": "/Users/dmitrygrishin/Downloads/NSW Government - Spatial Services 4/Point Clouds/AHD/Brindabella201802-LID2-C3-AHD_6766112_55_0002_0002.copc.laz"
+  },
+  {
+    "type": "filters.range",
+    "limits": "Classification[2:2]"
+  },
+  {
+    "type": "writers.gdal",
+    "filename": "/Users/dmitrygrishin/Honours2025/DEM_processing/brindabella_ground_dem2.tif",
+    "resolution": 2.0,
+    "output_type": "idw",
+    "dimension": "Z"
+  }
+]

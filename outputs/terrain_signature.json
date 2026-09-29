@@ -1,0 +1,24 @@
+{
+  "dem_crs": "EPSG:28355",
+  "resolution_m": 5,
+  "incisions_m": {
+    "baseline": 0,
+    "moderate_1m": 1,
+    "strong_4m": 4
+  },
+  "gully_half_width_m": 15,
+  "gully_upstream_length_m": 150,
+  "gully_downstream_length_m": 300,
+  "snap_radius_m": 20,
+  "laz_sha256": "4371244a2f6381c4f206572ff978c5342b7bae506f6b28ad76c1e185790d99d1",
+  "phenode": {
+    "WS-201f28e185df.csv": "0130a84947740ca47aa3ad25e461c32271a723335d36995439cc6b6bff90a3c9",
+    "WS-4aa144a4eafe.csv": "97be685adc7ce7911ab036fb7a316cd76d748b2973ead3f44d2d66020bf43e28",
+    "WS-555215c413db.csv": "4dc074f0e4fec6698a2e1decb89fb3289a946c0c8f99fe5506f857de9f95c887",
+    "WS-57c7afe16ae1.csv": "ef64a69cd4ad4be01480e518fcf448795583289fe4de017aaffa88c0d8c3963a",
+    "WS-a2f10ef43bc1.csv": "e29c02854c08a7d1fd77c91b5ac5c3c2009351b1e80e24d283868785bdd75eb8",
+    "WS-a84d3fd5d4ca.csv": "44d79a202f4193c2b602598cae0f0861d946ce91211661463ed12ed87f5bcf15",
+    "WS-f575dcdea0dc.csv": "917c0e36fd3197299c89bca2cf2b94593467853c21d305c9077655e83a93d916"
+  },
+  "algorithm_version": 2
+}
