@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "combinations": 9,
+  "time_series_rows": 77796,
+  "event_metric_rows": 324,
+  "max_exported_balance_residual_m3": 2.110980279468322e-10,
+  "checks": [
+    "Full factorial coverage",
+    "Storage bounded by scenario capacity",
+    "Mass balance including explicit excess",
+    "No unreported lower-bound correction",
+    "Baseline reproduces previous daily and hourly outputs",
+    "Capacity changes dynamics",
+    "DEM leaves bucket dynamics unchanged at fixed capacity",
+    "Individual gully totals match union"
+  ]
+}

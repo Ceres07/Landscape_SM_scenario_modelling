@@ -2,13 +2,15 @@
 
 A separate, reproducible sensitivity experiment using frozen DownscalingMoistureModel model8, real Phenode locations and a 5 m DEM generated from the supplied classified Brindabella LiDAR.
 
-Open **[outputs/whole_gully_storage.html](outputs/whole_gully_storage.html)** for whole-gully water-storage comparisons. The original sensor-pixel dashboard is **[outputs/index.html](outputs/index.html)**. It works offline. The dropdown switches between three past-year daily events and three older gauge-driven hourly experiments. Downloadable PNG/PDF figures and CSV predictions are beside it. **[outputs/all_sensors_daily.html](outputs/all_sensors_daily.html)** shows all seven sensors over the full period.
+Open **[outputs/capacity_depth_dashboard.html](outputs/capacity_depth_dashboard.html)** for the capacity-depth × DEM experiment, including hourly whole-gully storage, fullness and cumulative excess. See **[outputs/CAPACITY_DEPTH_RESULTS.md](outputs/CAPACITY_DEPTH_RESULTS.md)** for numerical results.
+
+The earlier **[outputs/whole_gully_storage.html](outputs/whole_gully_storage.html)** for whole-gully water-storage comparisons. The original sensor-pixel dashboard is **[outputs/index.html](outputs/index.html)**. It works offline. The dropdown switches between three past-year daily events and three older gauge-driven hourly experiments. Downloadable PNG/PDF figures and CSV predictions are beside it. **[outputs/all_sensors_daily.html](outputs/all_sensors_daily.html)** shows all seven sensors over the full period.
 
 ## What this experiment tests
 
 At each original sensor position, change terrain only: original DEM, an additional **1 m** centreline incision, and an additional **4 m** centreline incision. Keep weather, soil properties, model parameters and sensor coordinates fixed. A label ending in G after removing punctuation denotes a gully; this includes EOG, AOG and AEG?. Question marks are retained as uncertain labels.
 
-**Model8's terrain effect is additive. The experiment changes absolute soil moisture but cannot change the amplitude, timing or recession of the rainfall response.** The dashboard shows absolute predictions and pre-event-adjusted responses side by side. Their overlapping response curves are expected by construction, not evidence that real incision has no hydrological effect.
+**Model8's terrain effect is additive. The terrain-only experiment changes absolute soil moisture but cannot change the amplitude, timing or recession of the rainfall response.** The new capacity experiment below changes the process reservoir and therefore can change the dynamics. The dashboard shows absolute predictions and pre-event-adjusted responses side by side. Their overlapping response curves are expected by construction, not evidence that real incision has no hydrological effect.
 
 ## Inputs and dates
 
@@ -51,6 +53,38 @@ Run the extension separately after the original analysis:
 ```
 
 It reuses the existing cached soil rasters, weather and DEMs without network access. Results are in `gully_storage_timeseries.csv`, `gully_storage_areas.csv`, `gully_storage_scenario_comparison.csv`, and `gully_storage_metadata.json`. The standalone report and PNG/PDF plots are named `whole_gully_*`.
+
+## Capacity-depth factors crossed with incision
+
+The new experiment crosses **1×, 0.5× and 0.25× effective capacity** with each original, +1 m and +4 m incision DEM: nine combinations. Each uses the same fixed gully footprint, weather and frozen fitted coefficients. Change `capacity_depth_factors` in `config.json`, or pass `--factors 1 0.5 0.25` to the script; the factor-one control is required.
+
+At each cell, `capacity_mm = factor × fitted_smax × SLGA_AWC / training_mean_AWC`. This is a relative effective-depth hypothesis under unchanged soil water-holding properties. It is not a measured soil depth, and incision metres are not subtracted from an assumed soil profile. Unlike the earlier `--soil-depth-m` option, which only scales the SM-derived volume conversion, these factors enter the water-balance recurrence itself:
+
+```text
+wet = previous_storage + rain
+AET = PET × min(1, wet / (alpha × capacity))
+drainage = timestep_k × wet
+raw_storage = wet - AET - drainage
+excess = max(raw_storage - capacity, 0)
+storage = clip(raw_storage, 0, capacity)
+```
+
+Every capacity receives its own daily spin-up from January 2023, initialised at half of its own capacity. Hourly events start from that capacity's previous daily state. The fitted evaporation coefficient and daily drainage coefficient remain fixed; the existing hourly drainage conversion is retained. Upper-clipped excess is recorded after the model's losses. Any lower clipping is recorded separately as a numerical floor correction; none occurs in these runs.
+
+The dashboard plots total bucket water (m³), change from the preceding 24-hour mean, capacity-weighted fullness (%) and cumulative excess (m³), with rainfall alongside. Select individual gullies or their union. Volume describes water present at each time; only fluxes such as excess are accumulated through time. Fullness is storage divided by effective capacity, not volumetric SM. `legacy_sm_pct` remains in the CSV as a diagnostic of the original fitted readout, whose global denominator is unchanged.
+
+The three DEM cases still have identical bucket dynamics at a fixed capacity. There is no terrain-to-capacity coupling, lateral routing or surface ponding. Smaller capacities can fill sooner, hold less water and reject more rainfall; this tests a capacity mechanism without claiming that DEM incision alone causes it. Excess is water removed by upper clipping, not routed channel runoff. Hourly and altered-capacity results are uncalibrated sensitivity experiments.
+
+For the March 2026 event window, peak combined fullness is 51.7%, 83.4% and 100% for full, half and quarter capacity; cumulative excess is 0, 0 and approximately 654 m³ respectively. Later rainfall within a plotted window can affect its peak and recession metrics.
+
+Run from the repository after the existing area analysis:
+
+```bash
+/opt/miniconda3/envs/paddockts/bin/python scripts/run_capacity_experiment.py
+/opt/miniconda3/envs/paddockts/bin/python scripts/verify_capacity_experiment.py
+```
+
+`run_analysis.py` also runs this extension automatically. Outputs use the `capacity_depth_*` prefix: standalone HTML, hourly/daily PNG and PDF figures, time-series CSV, event-metrics CSV, budget audit and metadata. `capacity_depth_metadata.json` records factors, source hashes, fixed parameters and control parity. The independent exported-output verification checks the factorial coverage, water balance, storage bounds, union totals and unchanged factor-one control. Seventeen unit tests cover this and the earlier extensions.
 
 ## Daily versus hourly model
 

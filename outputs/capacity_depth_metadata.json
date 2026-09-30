@@ -1,0 +1,51 @@
+{
+  "capacity_factors": [
+    1.0,
+    0.5,
+    0.25
+  ],
+  "dem_scenarios": {
+    "baseline": 0,
+    "moderate_1m": 1,
+    "strong_4m": 4
+  },
+  "factorial_combinations": 9,
+  "definition": "capacity_i = frozen_model_smax * SLGA_AWC_i / training_mean_AWC * capacity_factor",
+  "depth_interpretation": "relative effective-depth proxy, not measured soil depths or incision subtracted from a soil profile",
+  "spinup_start": "2023-01-01",
+  "initial_fraction": 0.5,
+  "independent_spinup_per_capacity": true,
+  "readout": "legacy_sm_pct preserves original fitted global denominator; diagnostic only, not depth-corrected volumetric moisture",
+  "excess_definition": "max(storage_after_rain_minus_AET_minus_drainage - capacity, 0); upper-clipped water, not routed runoff",
+  "time_conventions": "Daily time is a SILO date label; hourly state is at interval end and step_start identifies the flux interval",
+  "model_sha256": "e14f257fd49366440a2ff2d131ecd16ed13189c9700036489aae92254cecfda4",
+  "soil_sha256": "283ad0cbd4e9e9a5a48316c2fdff5aa8b11e0d07974db0f05d428cd41a81f1ac",
+  "mask_sha256": "09be1b9e0e4904b768c04082a9bd2b2770d19521cf0bb0604d57545601b83de5",
+  "forcing_sha256": "64f471d54fef317bf6edd5a316580a0339cb8db09f13c393ed6f4834b95dde00",
+  "hourly_forcing_sha256": "e78052f4a214378c41c66b93bb195d7d27d686c7769ac895fe9a1748f3550fae",
+  "fixed_parameters": {
+    "smax": 179.35310407480046,
+    "alpha": 1.1666230791639909,
+    "k": 0.006534610437461938,
+    "theta_r": 17.724919498702008,
+    "dtheta": 16.87391922510052,
+    "c_soil_clay": 1.8554808162983403,
+    "c_soil_sand": -1.7692661670047165,
+    "c_soil_awc": -0.42000831863097055,
+    "c_soil_bdw": -0.43737226816506625,
+    "c_twi": 0.6909248191678597,
+    "c_slope": -0.583410488637071,
+    "c_elevation": -0.3474371084781884,
+    "c_aridity": 0.6111284452118453,
+    "c_intercept": 0.0544500474570818
+  },
+  "max_factor_one_difference_m3": 1.964508555829525e-10,
+  "max_budget_residual_mm": 3.941291737419306e-14,
+  "floor_correction_sum_mm": 0.0,
+  "limitations": [
+    "No lateral routing or surface ponding",
+    "Fitted alpha and k held constant; capacity affects saturation and ET stress but k is not re-estimated",
+    "Hourly timestep, PET allocation and missing-rain assumptions remain experimental",
+    "DEM controls the additive readout only; there is no DEM-by-capacity interaction in the bucket dynamics"
+  ]
+}
