@@ -4,7 +4,7 @@ A separate, reproducible sensitivity experiment using frozen DownscalingMoisture
 
 Open **[outputs/capacity_depth_dashboard.html](outputs/capacity_depth_dashboard.html)** for the capacity-depth × DEM experiment, including hourly whole-gully storage, fullness and cumulative excess. See **[outputs/CAPACITY_DEPTH_RESULTS.md](outputs/CAPACITY_DEPTH_RESULTS.md)** for numerical results.
 
-The earlier **[outputs/whole_gully_storage.html](outputs/whole_gully_storage.html)** for whole-gully water-storage comparisons. The original sensor-pixel dashboard is **[outputs/index.html](outputs/index.html)**. It works offline. The dropdown switches between three past-year daily events and three older gauge-driven hourly experiments. Downloadable PNG/PDF figures and CSV predictions are beside it. **[outputs/all_sensors_daily.html](outputs/all_sensors_daily.html)** shows all seven sensors over the full period.
+The earlier **[outputs/whole_gully_storage.html](outputs/whole_gully_storage.html)** shows whole-gully water-storage comparisons. The original sensor-pixel dashboard is **[outputs/index.html](outputs/index.html)**. It works offline. The dropdown switches between three past-year daily events and three older gauge-driven hourly experiments. Downloadable PNG/PDF figures and CSV predictions are beside it. **[outputs/all_sensors_daily.html](outputs/all_sensors_daily.html)** shows all seven sensors over the full period.
 
 ## What this experiment tests
 
@@ -117,7 +117,7 @@ cd /Volumes/Dmitry_work/borevitz_projects/phenode_gully_scenarios
 /opt/miniconda3/envs/paddockts/bin/python scripts/verify_outputs.py
 ```
 
-`fetch_weather_soil.py` is the only network step; it uses existing PaddockTS credentials without storing them in this repository. The other steps run offline with cached inputs. Paths and scenario parameters are in `config.json`. Source data, rasters and large reports are ignored by git but remain available locally. No remote repository is configured.
+`fetch_weather_soil.py` is the only network step; it uses existing PaddockTS credentials without storing them in this repository. The other steps run offline with cached inputs. Paths and scenario parameters are in `config.json`. Source data, rasters and large reports are ignored by git but remain available locally. The GitHub repository is [Ceres07/Landscape_SM_scenario_modelling](https://github.com/Ceres07/Landscape_SM_scenario_modelling). Dashboard, figure and CSV links refer to locally generated outputs; run the analysis with the required input data to create them after cloning. Numerical results and verification metadata are included in git.
 
 ## Verification and provenance
 
