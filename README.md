@@ -117,7 +117,7 @@ cd /Volumes/Dmitry_work/borevitz_projects/phenode_gully_scenarios
 /opt/miniconda3/envs/paddockts/bin/python scripts/verify_outputs.py
 ```
 
-`fetch_weather_soil.py` is the only network step; it uses existing PaddockTS credentials without storing them in this repository. The other steps run offline with cached inputs. Paths and scenario parameters are in `config.json`. Source data, rasters and large reports are ignored by git but remain available locally. The GitHub repository is [Ceres07/Landscape_SM_scenario_modelling](https://github.com/Ceres07/Landscape_SM_scenario_modelling). Dashboard, figure and CSV links refer to locally generated outputs; run the analysis with the required input data to create them after cloning. Numerical results and verification metadata are included in git.
+`fetch_weather_soil.py` is the only network step; it uses existing PaddockTS credentials without storing them in this repository. The other steps run offline with cached inputs. Paths and scenario parameters are in `config.json`. Raw source inputs and caches remain ignored by git. Generated outputs, including terrain rasters, dashboards, figures and CSV tables, are included in the repository. The GitHub repository is [Ceres07/Landscape_SM_scenario_modelling](https://github.com/Ceres07/Landscape_SM_scenario_modelling). Download or clone the repository and open the HTML dashboards in a browser; GitHub displays their source rather than running them. Run the analysis with the required input data to regenerate the outputs. Numerical results and verification metadata are also included in git.
 
 ## Verification and provenance
 

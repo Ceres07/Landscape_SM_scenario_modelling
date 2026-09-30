@@ -1,0 +1,4 @@
+label,snap_distance_m,sensor_weight,catchment_touches_dem_edge,catchment_touches_nodata,catchment_area_m2
+EOG,15.811388300841898,0.75,False,False,23600
+AOG,14.142135623730951,1.0,False,False,23575
+AEG?,15.811388300841898,0.75,False,False,103125

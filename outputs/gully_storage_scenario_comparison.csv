@@ -1,0 +1,85 @@
+series,event_id,gap_policy,region,scenario,mean_storage_difference_m3,storage_difference_temporal_range_m3,max_bucket_difference_m3
+daily,,daily,AEG?,baseline,0.0,0.0,0.0
+daily,,daily,AEG?,moderate_1m,-41.99586639425301,1.8189894035458565e-12,0.0
+daily,,daily,AEG?,strong_4m,-160.92600268588285,1.8189894035458565e-12,0.0
+daily,,daily,AOG,baseline,0.0,0.0,0.0
+daily,,daily,AOG,moderate_1m,-44.177564079512194,9.094947017729282e-13,0.0
+daily,,daily,AOG,strong_4m,-196.73548612250048,1.8189894035458565e-12,0.0
+daily,,daily,All gullies (union),baseline,0.0,0.0,0.0
+daily,,daily,All gullies (union),moderate_1m,-128.0726390607134,4.547473508864641e-12,0.0
+daily,,daily,All gullies (union),strong_4m,-538.6093968792862,6.366462912410498e-12,0.0
+daily,,daily,EOG,baseline,0.0,0.0,0.0
+daily,,daily,EOG,moderate_1m,-41.89920858694825,1.8189894035458565e-12,0.0
+daily,,daily,EOG,strong_4m,-180.94790807090283,1.8189894035458565e-12,0.0
+experimental_hourly,historical_hourly_20250624,silo_fraction,AEG?,baseline,0.0,0.0,0.0
+experimental_hourly,historical_hourly_20250624,silo_fraction,AEG?,moderate_1m,-41.99586639425294,1.8189894035458565e-12,0.0
+experimental_hourly,historical_hourly_20250624,silo_fraction,AEG?,strong_4m,-160.9260026858828,1.8189894035458565e-12,0.0
+experimental_hourly,historical_hourly_20250624,silo_fraction,AOG,baseline,0.0,0.0,0.0
+experimental_hourly,historical_hourly_20250624,silo_fraction,AOG,moderate_1m,-44.177564079512166,9.094947017729282e-13,0.0
+experimental_hourly,historical_hourly_20250624,silo_fraction,AOG,strong_4m,-196.73548612250053,1.8189894035458565e-12,0.0
+experimental_hourly,historical_hourly_20250624,silo_fraction,All gullies (union),baseline,0.0,0.0,0.0
+experimental_hourly,historical_hourly_20250624,silo_fraction,All gullies (union),moderate_1m,-128.07263906071344,1.8189894035458565e-12,0.0
+experimental_hourly,historical_hourly_20250624,silo_fraction,All gullies (union),strong_4m,-538.6093968792862,4.547473508864641e-12,0.0
+experimental_hourly,historical_hourly_20250624,silo_fraction,EOG,baseline,0.0,0.0,0.0
+experimental_hourly,historical_hourly_20250624,silo_fraction,EOG,moderate_1m,-41.899208586948255,1.3642420526593924e-12,0.0
+experimental_hourly,historical_hourly_20250624,silo_fraction,EOG,strong_4m,-180.94790807090288,1.3642420526593924e-12,0.0
+experimental_hourly,historical_hourly_20250624,zero_missing,AEG?,baseline,0.0,0.0,0.0
+experimental_hourly,historical_hourly_20250624,zero_missing,AEG?,moderate_1m,-41.995866394252985,1.8189894035458565e-12,0.0
+experimental_hourly,historical_hourly_20250624,zero_missing,AEG?,strong_4m,-160.92600268588276,1.8189894035458565e-12,0.0
+experimental_hourly,historical_hourly_20250624,zero_missing,AOG,baseline,0.0,0.0,0.0
+experimental_hourly,historical_hourly_20250624,zero_missing,AOG,moderate_1m,-44.17756407951214,9.094947017729282e-13,0.0
+experimental_hourly,historical_hourly_20250624,zero_missing,AOG,strong_4m,-196.73548612250045,1.3642420526593924e-12,0.0
+experimental_hourly,historical_hourly_20250624,zero_missing,All gullies (union),baseline,0.0,0.0,0.0
+experimental_hourly,historical_hourly_20250624,zero_missing,All gullies (union),moderate_1m,-128.07263906071347,1.8189894035458565e-12,0.0
+experimental_hourly,historical_hourly_20250624,zero_missing,All gullies (union),strong_4m,-538.6093968792864,4.547473508864641e-12,0.0
+experimental_hourly,historical_hourly_20250624,zero_missing,EOG,baseline,0.0,0.0,0.0
+experimental_hourly,historical_hourly_20250624,zero_missing,EOG,moderate_1m,-41.89920858694825,1.3642420526593924e-12,0.0
+experimental_hourly,historical_hourly_20250624,zero_missing,EOG,strong_4m,-180.94790807090283,1.3642420526593924e-12,0.0
+experimental_hourly,historical_hourly_20250706,silo_fraction,AEG?,baseline,0.0,0.0,0.0
+experimental_hourly,historical_hourly_20250706,silo_fraction,AEG?,moderate_1m,-41.99586639425298,1.8189894035458565e-12,0.0
+experimental_hourly,historical_hourly_20250706,silo_fraction,AEG?,strong_4m,-160.9260026858828,1.8189894035458565e-12,0.0
+experimental_hourly,historical_hourly_20250706,silo_fraction,AOG,baseline,0.0,0.0,0.0
+experimental_hourly,historical_hourly_20250706,silo_fraction,AOG,moderate_1m,-44.177564079512166,9.094947017729282e-13,0.0
+experimental_hourly,historical_hourly_20250706,silo_fraction,AOG,strong_4m,-196.73548612250048,1.8189894035458565e-12,0.0
+experimental_hourly,historical_hourly_20250706,silo_fraction,All gullies (union),baseline,0.0,0.0,0.0
+experimental_hourly,historical_hourly_20250706,silo_fraction,All gullies (union),moderate_1m,-128.07263906071356,1.8189894035458565e-12,0.0
+experimental_hourly,historical_hourly_20250706,silo_fraction,All gullies (union),strong_4m,-538.6093968792864,5.4569682106375694e-12,0.0
+experimental_hourly,historical_hourly_20250706,silo_fraction,EOG,baseline,0.0,0.0,0.0
+experimental_hourly,historical_hourly_20250706,silo_fraction,EOG,moderate_1m,-41.899208586948255,1.3642420526593924e-12,0.0
+experimental_hourly,historical_hourly_20250706,silo_fraction,EOG,strong_4m,-180.94790807090283,1.3642420526593924e-12,0.0
+experimental_hourly,historical_hourly_20250706,zero_missing,AEG?,baseline,0.0,0.0,0.0
+experimental_hourly,historical_hourly_20250706,zero_missing,AEG?,moderate_1m,-41.99586639425298,1.8189894035458565e-12,0.0
+experimental_hourly,historical_hourly_20250706,zero_missing,AEG?,strong_4m,-160.9260026858828,1.8189894035458565e-12,0.0
+experimental_hourly,historical_hourly_20250706,zero_missing,AOG,baseline,0.0,0.0,0.0
+experimental_hourly,historical_hourly_20250706,zero_missing,AOG,moderate_1m,-44.17756407951217,9.094947017729282e-13,0.0
+experimental_hourly,historical_hourly_20250706,zero_missing,AOG,strong_4m,-196.73548612250048,1.8189894035458565e-12,0.0
+experimental_hourly,historical_hourly_20250706,zero_missing,All gullies (union),baseline,0.0,0.0,0.0
+experimental_hourly,historical_hourly_20250706,zero_missing,All gullies (union),moderate_1m,-128.07263906071344,1.8189894035458565e-12,0.0
+experimental_hourly,historical_hourly_20250706,zero_missing,All gullies (union),strong_4m,-538.6093968792862,5.4569682106375694e-12,0.0
+experimental_hourly,historical_hourly_20250706,zero_missing,EOG,baseline,0.0,0.0,0.0
+experimental_hourly,historical_hourly_20250706,zero_missing,EOG,moderate_1m,-41.89920858694824,1.3642420526593924e-12,0.0
+experimental_hourly,historical_hourly_20250706,zero_missing,EOG,strong_4m,-180.94790807090283,1.3642420526593924e-12,0.0
+experimental_hourly,historical_hourly_20250726,silo_fraction,AEG?,baseline,0.0,0.0,0.0
+experimental_hourly,historical_hourly_20250726,silo_fraction,AEG?,moderate_1m,-41.99586639425299,1.8189894035458565e-12,0.0
+experimental_hourly,historical_hourly_20250726,silo_fraction,AEG?,strong_4m,-160.92600268588285,1.8189894035458565e-12,0.0
+experimental_hourly,historical_hourly_20250726,silo_fraction,AOG,baseline,0.0,0.0,0.0
+experimental_hourly,historical_hourly_20250726,silo_fraction,AOG,moderate_1m,-44.177564079512166,9.094947017729282e-13,0.0
+experimental_hourly,historical_hourly_20250726,silo_fraction,AOG,strong_4m,-196.73548612250048,1.8189894035458565e-12,0.0
+experimental_hourly,historical_hourly_20250726,silo_fraction,All gullies (union),baseline,0.0,0.0,0.0
+experimental_hourly,historical_hourly_20250726,silo_fraction,All gullies (union),moderate_1m,-128.07263906071347,1.8189894035458565e-12,0.0
+experimental_hourly,historical_hourly_20250726,silo_fraction,All gullies (union),strong_4m,-538.6093968792864,6.366462912410498e-12,0.0
+experimental_hourly,historical_hourly_20250726,silo_fraction,EOG,baseline,0.0,0.0,0.0
+experimental_hourly,historical_hourly_20250726,silo_fraction,EOG,moderate_1m,-41.89920858694828,1.3642420526593924e-12,0.0
+experimental_hourly,historical_hourly_20250726,silo_fraction,EOG,strong_4m,-180.94790807090286,1.3642420526593924e-12,0.0
+experimental_hourly,historical_hourly_20250726,zero_missing,AEG?,baseline,0.0,0.0,0.0
+experimental_hourly,historical_hourly_20250726,zero_missing,AEG?,moderate_1m,-41.99586639425299,1.8189894035458565e-12,0.0
+experimental_hourly,historical_hourly_20250726,zero_missing,AEG?,strong_4m,-160.9260026858828,1.8189894035458565e-12,0.0
+experimental_hourly,historical_hourly_20250726,zero_missing,AOG,baseline,0.0,0.0,0.0
+experimental_hourly,historical_hourly_20250726,zero_missing,AOG,moderate_1m,-44.17756407951218,9.094947017729282e-13,0.0
+experimental_hourly,historical_hourly_20250726,zero_missing,AOG,strong_4m,-196.73548612250048,1.8189894035458565e-12,0.0
+experimental_hourly,historical_hourly_20250726,zero_missing,All gullies (union),baseline,0.0,0.0,0.0
+experimental_hourly,historical_hourly_20250726,zero_missing,All gullies (union),moderate_1m,-128.07263906071353,2.7284841053187847e-12,0.0
+experimental_hourly,historical_hourly_20250726,zero_missing,All gullies (union),strong_4m,-538.6093968792864,5.4569682106375694e-12,0.0
+experimental_hourly,historical_hourly_20250726,zero_missing,EOG,baseline,0.0,0.0,0.0
+experimental_hourly,historical_hourly_20250726,zero_missing,EOG,moderate_1m,-41.899208586948276,1.3642420526593924e-12,0.0
+experimental_hourly,historical_hourly_20250726,zero_missing,EOG,strong_4m,-180.94790807090288,1.3642420526593924e-12,0.0

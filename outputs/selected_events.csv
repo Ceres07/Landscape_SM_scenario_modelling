@@ -1,0 +1,7 @@
+date,rain_mm,rain_rank,group,rain_source,coverage_hours,event_id
+2026-03-03,36.0,1.0,past_year_daily,SILO daily,24,past_year_daily_20260303
+2025-12-22,28.1,2.0,past_year_daily,SILO daily,24,past_year_daily_20251222
+2026-02-08,27.5,3.0,past_year_daily,SILO daily,24,past_year_daily_20260208
+2025-07-26,19.3,,historical_hourly,Gauge observed subtotal (incomplete days),23,historical_hourly_20250726
+2025-07-06,12.6,,historical_hourly,Gauge observed subtotal (incomplete days),23,historical_hourly_20250706
+2025-06-24,10.2,,historical_hourly,Gauge observed subtotal (incomplete days),23,historical_hourly_20250624

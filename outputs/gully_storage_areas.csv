@@ -1,0 +1,5 @@
+region,footprint_pixels,valid_pixels,footprint_area_m2,valid_area_m2,excluded_area_m2
+EOG,480,480,12000.0,12000.0,0.0
+AOG,525,525,13125.0,13125.0,0.0
+AEG?,496,496,12400.0,12400.0,0.0
+All gullies (union),1501,1501,37525.0,37525.0,0.0
